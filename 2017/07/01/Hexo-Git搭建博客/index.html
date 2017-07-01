@@ -6,14 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives | Hexo</title>
+  <title>Hexo+Git搭建博客 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/archives/index.html">
+  <meta name="description" content="本文转自：http://www.cnblogs.com/liuxianan/p/build-blog-website-by-hexo-github.htmlcd 进入 Hexo安装  npm install -g hexo hexo init hexo g # 生成静态页面 hexo s # 启动服务   1、执行以上命令之后，hexo就会在public文件夹生成相关html文件，这些文件将来都是">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo+Git搭建博客">
+<meta property="og:url" content="http://yoursite.com/2017/07/01/Hexo-Git搭建博客/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="本文转自：http://www.cnblogs.com/liuxianan/p/build-blog-website-by-hexo-github.htmlcd 进入 Hexo安装  npm install -g hexo hexo init hexo g # 生成静态页面 hexo s # 启动服务   1、执行以上命令之后，hexo就会在public文件夹生成相关html文件，这些文件将来都是">
+<meta property="og:updated_time" content="2017-07-01T15:56:50.895Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="Hexo+Git搭建博客">
+<meta name="twitter:description" content="本文转自：http://www.cnblogs.com/liuxianan/p/build-blog-website-by-hexo-github.htmlcd 进入 Hexo安装  npm install -g hexo hexo init hexo g # 生成静态页面 hexo s # 启动服务   1、执行以上命令之后，hexo就会在public文件夹生成相关html文件，这些文件将来都是">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -149,49 +153,157 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-Hexo-Git搭建博客" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/07/01/Hexo-Git搭建博客/" class="archive-article-date">
-  	<time datetime="2017-07-01T10:30:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-01</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/07/01/Hexo-Git搭建博客/">Hexo+Git搭建博客</a>
+    <h1 class="article-title" itemprop="name">
+      Hexo+Git搭建博客
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
+        
+        <a href="/2017/07/01/Hexo-Git搭建博客/" class="archive-article-date">
+  	<time datetime="2017-07-01T10:30:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-01</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="本文转自：http-www-cnblogs-com-liuxianan-p-build-blog-website-by-hexo-github-html"><a href="#本文转自：http-www-cnblogs-com-liuxianan-p-build-blog-website-by-hexo-github-html" class="headerlink" title="本文转自：http://www.cnblogs.com/liuxianan/p/build-blog-website-by-hexo-github.html"></a>本文转自：<a href="http://www.cnblogs.com/liuxianan/p/build-blog-website-by-hexo-github.html" target="_blank" rel="external">http://www.cnblogs.com/liuxianan/p/build-blog-website-by-hexo-github.html</a></h3><h1 id="cd-进入"><a href="#cd-进入" class="headerlink" title="cd 进入"></a>cd 进入</h1><hr>
+<h3 id="Hexo安装"><a href="#Hexo安装" class="headerlink" title="Hexo安装"></a><a href="https://www.zybuluo.com/cmd/" target="_blank" rel="external">Hexo安装</a></h3><blockquote>
+<ul>
+<li>npm install -g hexo</li>
+<li>hexo init</li>
+<li>hexo g # 生成静态页面</li>
+<li>hexo s # 启动服务</li>
+</ul>
+</blockquote>
+<p>1、执行以上命令之后，hexo就会在public文件夹生成相关html文件，这些文件将来都是要提交到github去的；<br>2、如果4000这个端口打不开<br>以8081端口为例讲解。<br>按下Win+R调出命令行窗口，输入netstat -aon|findstr “8081”，找到指定行最后一列的数字（PID），我们这里是9548.<br>输入tasklist|findstr “9548”，发现是javaw.exe占用了8081端口。<br>再次输入taskkill /f /t /im javaw.exe结束该进程。</p>
+<p>或</p>
+<p>按下Ctrl+Shift+Esc弹出任务管理器，切换到详细信息面板，根据PID找到指定进程并结束：</p>
+<h3 id="修改主题"><a href="#修改主题" class="headerlink" title="修改主题"></a>修改主题</h3><blockquote>
+<ul>
+<li>[官网主题] (<a href="https://hexo.io/themes/）" target="_blank" rel="external">https://hexo.io/themes/）</a></li>
+<li>git clone <a href="https://github.com/litten/hexo-theme-yilia.git" target="_blank" rel="external">https://github.com/litten/hexo-theme-yilia.git</a> themes/yilia<br>修改_config.yml中的theme: landscape改为theme: yilia，然后重新执行hexo g来重新生成。<br>如果出现一些莫名其妙的问题，可以先执行hexo clean来清理一下public的内容，然后再来重新生成和发布。</li>
+</ul>
+</blockquote>
+<hr>
+<h3 id="Git"><a href="#Git" class="headerlink" title="Git"></a><a href="https://www.zybuluo.com/cmd/" target="_blank" rel="external">Git</a></h3><p>首先，ssh key肯定要配置好。<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">1、cd ~/ . ssh #检查本机已存在的ssh密钥</div><div class="line">如果提示No such file or directory 说明你是第一次使用git</div><div class="line">ssh-keygen -t rsa -C "邮件地址"</div><div class="line">然后连续3次回车，最终会生成一个文件在用户目录下，打开用户目录，找到.ssh\id_rsa.pub文件，记事本打开并复制里面的内容，打开你的github主页，进入个人设置 -&gt; SSH and GPG keys -&gt; New SSH key：粘贴</div><div class="line">2、测试是否成功</div><div class="line">ssh -T git@github.com # 注意邮箱地址不用改</div><div class="line">3、如果提示Are you sure you want to continue connecting (yes/no)?，输入yes，然后会看到：</div><div class="line">Hi XXX! You've successfully authenticated, but GitHub does not provide shell access.</div><div class="line">看到这个信息说明SSH已配置成功！</div><div class="line"></div><div class="line">此时你还需要配置：</div><div class="line">git config --global user.name "xxx"// 你的github用户名，非昵称</div><div class="line">git config --global user.email  "xxx@qq.com"// 填写你的github注册邮箱</div></pre></td></tr></table></figure></p>
+<p>其次，配置_config.yml中有关deploy的部分：</p>
+<p>正确写法:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">deploy:</div><div class="line">  type: git</div><div class="line">  repository: git@github.com:userName/userName.github.io.git</div><div class="line">  branch: master</div></pre></td></tr></table></figure></p>
+<p>如果报错：Deployer not found: github 或者 Deployer not found: git<br>请安装：npm install hexo-deployer-git –save</p>
+<h3 id="常用Hexo命令"><a href="#常用Hexo命令" class="headerlink" title="常用Hexo命令"></a><a href="https://www.zybuluo.com/cmd/" target="_blank" rel="external">常用Hexo命令</a></h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">hexo new <span class="string">"postName"</span> <span class="comment">#新建文章</span></div><div class="line">hexo new page <span class="string">"pageName"</span> <span class="comment">#新建页面</span></div><div class="line">hexo generate <span class="comment">#生成静态页面至public目录</span></div><div class="line">hexo server <span class="comment">#开启预览访问端口（默认端口4000，'ctrl + c'关闭server）</span></div><div class="line">hexo deploy <span class="comment">#部署到GitHub</span></div><div class="line">hexo help  <span class="comment"># 查看帮助</span></div><div class="line">hexo version  <span class="comment">#查看Hexo的版本</span></div></pre></td></tr></table></figure>
+<h1 id="每次部署的步骤，可按以下三步来进行。"><a href="#每次部署的步骤，可按以下三步来进行。" class="headerlink" title="每次部署的步骤，可按以下三步来进行。"></a>每次部署的步骤，可按以下三步来进行。</h1><pre><code>hexo clean
 
+hexo generate
+
+hexo deploy
+</code></pre>
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/07/01/Hexo-Git搭建博客/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
-  
-  
-    </div></section>
+
   
 
-    
+
+
+
+  
+  
+  
+
+  
+
+  
 
 
           </div>
@@ -214,8 +326,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
